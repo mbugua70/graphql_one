@@ -8,6 +8,15 @@ const { response } = require("express");
 const {GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema} = graphql;
 // GraphQLSchema takes in a root query and return a schema  instance.
 
+const CompanyType  = new  GraphQLObjectType({
+    name: "Company",
+    fields: {
+        id: {type: GraphQLString},
+        name: {type: GraphQLString},
+        description: {type: GraphQLString}
+    }
+})
+
 const UserType = new GraphQLObjectType({
     // it has two part, name in strings, and fields
     name: "User",
@@ -16,6 +25,14 @@ const UserType = new GraphQLObjectType({
      id: {type: GraphQLString} ,
      firstname: {type: GraphQLString},
      age: {type: GraphQLInt},
+     company: {
+        type: CompanyType,
+        resolve(parentValue, args) {
+            // console.log(parentValue, args)
+            return axios.get(`http://localhost:3000/companies/${parentValue.companyId}`)
+            .then(response => response.data)
+        }
+    }
     }
 })
 
