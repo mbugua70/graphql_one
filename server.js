@@ -2,7 +2,14 @@ const express = require('express');
 const expressGraphQL = require("express-graphql").graphqlHTTP
 const schema = require("./schema/schema")
 
+
+
+
 const app = express();
+
+// middleware function
+
+
 
 // to use and construct graphql
 // we will need a handler function, schema, and rosolver function

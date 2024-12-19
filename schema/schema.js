@@ -1,7 +1,9 @@
 // schema is what tell our graphql our data looks like
 const graphql  = require("graphql")
-const __ = require("lodash")
-const users = require("../data/data")
+// const __ = require("lodash")
+// const users = require("../data/data")
+const axios = require("axios");
+const { response } = require("express");
 
 const {GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema} = graphql;
 // GraphQLSchema takes in a root query and return a schema  instance.
@@ -29,7 +31,9 @@ const RootQuery = new GraphQLObjectType({
             // resolve fun is used to go to the database and grab the data we are looking for.
             // the id passed as an arguement above will also be expected to be available in the code below
             resolve(parentValue, args) {
-              return __.find(users, {id: args.id})
+            //   return __.find(users, {id: args.id})
+            return axios.get(`http://localhost:3000/users/${args.id}`)
+            .then(response => response.data)
             }
         }
     }
