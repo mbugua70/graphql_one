@@ -91,12 +91,6 @@
       "companyId": "0638badb-4eb6-4d5b-b983-c2d61b9d042a"
     },
     {
-      "id": "b432d20c-6fd8-41fd-bdfa-c32841214b73",
-      "firstname": "Kenna",
-      "age": 49,
-      "companyId": "c4824f17-d6d7-4bba-bbb8-c9ac2ba8ca56"
-    },
-    {
       "id": "775d2ec0-69ed-447e-a6ac-721345d9d360",
       "firstname": "Ayden",
       "age": 44,
@@ -119,6 +113,11 @@
       "firstname": "Kyler",
       "age": 19,
       "companyId": "0ae239ad-86d5-4b27-a64a-f4acf290c5ab"
+    },
+    {
+      "id": "2c11",
+      "firstname": "kamau",
+      "age": 33
     }
   ],
   "companies": [
