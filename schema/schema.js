@@ -150,3 +150,8 @@ module.exports = Schema;
 
 // data munipulaton using mutations
 //
+
+// client tech with graphql
+// lokka
+// apollo client -it  has also apollo stack to use on the backend
+// relay
